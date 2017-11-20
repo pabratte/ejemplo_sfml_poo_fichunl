@@ -8,7 +8,19 @@ Game::Game(){
 }
 
 void Game::init(){
+	// crear la ventana de juego
 	w.create(sf::VideoMode(640,400),"Ejemplo de SFML");
+	
+	// cargar las texturas
+	texBackground.loadFromFile("assets/images/background.png");
+	texChar.loadFromFile("assets/images/char.png");
+	
+	// crear los sprites
+	spBackground.setTexture(texBackground);
+	spChar.setTexture(texChar);
+	
+	// posicionar al personaje
+	spChar.setPosition(304, 306);
 }
 
 void Game::run(){
@@ -36,8 +48,12 @@ void Game::update(){
 }
 
 void Game::draw(){
+	// limpiar la pantalla
 	w.clear(sf::Color::Black);
-	/// draw game objects here...
+	// dibujar los sprites del juego
+	w.draw(spBackground);
+	w.draw(spChar);
+	// refrescar la ventana
 	w.display();
 }
 
