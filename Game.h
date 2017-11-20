@@ -3,21 +3,26 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+#include "Character.h"
+#include <vector>
+using namespace std;
 
 class Game {
 public:
 	Game();
 	void run();
+	void add(Entity *e);
 	
 private:
 	sf::RenderWindow w;
-	sf::Texture texChar;
 	sf::Texture texBackground;
-	sf::Texture texBall;
-	sf::Sprite spChar;
 	sf::Sprite spBackground;
-	sf::Sprite spBall;
-	sf::Vector2f velBall;
+	
+	
+	Character *character;
+	Ball *ball;
+	
+	vector<Entity *> entities;
 	
 	void init();
 	void update();
