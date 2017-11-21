@@ -1,13 +1,13 @@
-#include "Character.h"
+#include "Player.hpp"
 #include <SFML/Window/Keyboard.hpp>
 
-Character::Character(const sf::Vector2f &pos){
+Player::Player(const sf::Vector2f &pos){
 	texChar.loadFromFile("assets/images/char.png");
 	spChar.setTexture(texChar);
 	spChar.setPosition(pos);
 }
 
-void Character::update(){
+void Player::update(float elapsed){
 	// mover al personaje
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
 		spChar.move(-CHAR_VEL, 0);
@@ -22,15 +22,15 @@ void Character::update(){
 	spChar.setPosition(charPos);
 }
 
-void Character::draw(sf::RenderWindow &w){
+void Player::draw(sf::RenderWindow &w){
 	w.draw(spChar);
 }
 
-sf::Sprite &Character::getSprite(){
+sf::Sprite &Player::getSprite(){
 	return spChar;
 }
 
-bool Character::collidesWithBall(Ball *b){
+bool Player::collidesWithBall(Ball *b){
 	sf::FloatRect charRect = getSprite().getGlobalBounds();
 	sf::FloatRect ballRect = b->getSprite().getGlobalBounds();
 	return charRect.intersects(ballRect);

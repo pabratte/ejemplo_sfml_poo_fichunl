@@ -4,12 +4,12 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include "poo_game/Entity.h"
-#include "Ball.h"
+#include "Ball.hpp"
 
-class Character: public Entity{
+class Player: public Entity{
 public:
-	Character(const sf::Vector2f &pos);
-	void update() override;
+	Player(const sf::Vector2f &pos);
+	void update(float elapsed) override;
 	void draw(sf::RenderWindow &w) override;
 	sf::Sprite &getSprite();
 	bool collidesWithBall(Ball *b);

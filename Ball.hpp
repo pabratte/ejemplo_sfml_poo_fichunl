@@ -9,7 +9,7 @@
 class Ball: public Entity{
 public:
 	Ball();
-	void update() override;
+	void update(float elapsed) override;
 	void draw(sf::RenderWindow &w) override;
 	sf::Sprite &getSprite();
 private:

@@ -11,7 +11,7 @@ Ball::Ball(){
 	velBall.y = 2+rand()%3;
 }
 
-void Ball::update(){
+void Ball::update(float elapsed){
 	// mover la pelota
 	spBall.move(velBall);
 	
