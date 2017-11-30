@@ -3,7 +3,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
-#include "poo_game/Entity.h"
+#include "poo_game/Entity.hpp"
 #include "Ball.hpp"
 
 class Player: public Entity{

@@ -2,7 +2,7 @@
 #define BASESCENE_HPP
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "Entity.h"
+#include "Entity.hpp"
 #include <vector>
 using namespace std;
 
