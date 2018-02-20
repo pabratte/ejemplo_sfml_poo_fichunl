@@ -19,6 +19,10 @@ void BaseScene::update(float elapsed) {
 	to_delete.clear();
 }
 
+void BaseScene::process_event(const sf::Event &e){
+	
+}
+
 void BaseScene::draw(sf::RenderWindow &w){
 	for(auto e: entities){
 		e->draw(w);

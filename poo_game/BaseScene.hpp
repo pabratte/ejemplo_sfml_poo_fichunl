@@ -9,19 +9,22 @@ using namespace std;
 
 /***
  * Representa una escena del juego.
- * Para crear una nueva clase de escena, heredar de ésta clase
- * y redefinir el comportamiento de los métodos
+ * Para crear una nueva clase de escena, heredar de ï¿½sta clase
+ * y redefinir el comportamiento de los mï¿½todos
  */ 
 class BaseScene {
 public:
 	/// constructor
 	BaseScene();
 	
-	/// función que será invocada para actualizar la escena
+	/// funciï¿½n que serï¿½ invocada para actualizar la escena
 	virtual void update(float elapsed);
 	
-	/// función que será invocada para dibujar la escena
+	/// funciï¿½n que serï¿½ invocada para dibujar la escena
 	virtual void draw(sf::RenderWindow &w);
+
+	/// funciï¿½n que serï¿½ invocada para notificar a la escena de un evento
+	virtual void process_event(const sf::Event &e);
 
 	/// agrega un nuevo actor a la escena
 	void add(Entity *e);

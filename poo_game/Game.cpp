@@ -35,6 +35,8 @@ void Game::run(){
 		while(window.pollEvent(e)){
 			if(e.type == sf::Event::Closed){
 				window.close();
+			}else{
+				currentScene->process_event(e);
 			}
 		}
 		update();
